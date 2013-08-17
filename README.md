@@ -3,23 +3,30 @@
 Base de features comuns em diversos projetos
 
 
+###Modo Multi Application ou Single Core
+Com este branch o core do CakePHP deve estar instalado em seu computador 
+ou servidor e adicionado o include_path do mesmo em seu projeto.
+
+
 ###Instalação
 
-* Crie um projeto baseado no CakePHP com a versão mais recente
-* atualize este repositório em seu localhost `git pull`
-* a partir do shell entre na pasta deste projeto
-* Execute: ` php init.php /caminho/completo/ate/seu/projeto/recem/criado `
+* git clone git@github.com:redsuns/cake-base.git
 
 
 ###Configuração
 
-Após a instalação suponho que ao criar seu projeto do CakePHP já tenha configurado o banco de dados default,
-caso não tenha configure-o agora e siga os passos abaixo:
+* Altere o include_path dos arquivos webroot/index.php  e webroot/test.php
+de ` define('CAKE_CORE_INCLUDE_PATH',  DS . 'opt' . DS . 'cakephp' . DS . 'lib'); ` para
+` define('CAKE_CORE_INCLUDE_PATH',  'seu_core_do_cakePHP'); `
 
-* a partir do shell entre na pasta raiz de seu novo projeto e em seguida entre na pasta ` app/Console ` 
+webroot/index.php - linha: 66
+webroot/test.php - linha: 64
+
+
+* a partir do shell entre na pasta raiz de seu novo projeto e em seguida entre na pasta ` Console ` 
 e rode o cake schema ` ./cake schema create ` para que seu banco de dados seja inicializado. 
 
-* Caso o shell do cake não possa ser executado importe o arquivo schema.sql de ` app/Config/Schema ` através de 
+* Caso o shell do cake não possa ser executado importe o arquivo schema.sql de ` Config/Schema ` através de 
 seu gerenciador de banco de dados.
 
 
